@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<!--<GridPane xmlns="http://javafx.com/javafx/11.0.1"-->
+<!--          xmlns:fx="http://javafx.com/fxml/1"-->
+<!--          fx:controller="com.whitneygoodey.inventoryManager.PartFormController"-->
+<!--          alignment="CENTER" hgap="10.0" vgap="10.0" prefHeight="400.0" prefWidth="550.0">-->
+
+<GridPane alignment="CENTER" hgap="10.0" prefHeight="400.0" prefWidth="550.0" vgap="10.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.whitneygoodey.inventoryManager.PartFormController">
+    <padding>
+        <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+    </padding>
+
+    <Label fx:id="addModify" focusTraversable="false" text="Part" GridPane.columnIndex="0" GridPane.rowIndex="0">
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font></Label>
+    <RadioButton fx:id="inHouse" onAction="#handleRadios" selected="true" text="In-house" GridPane.columnIndex="1" GridPane.rowIndex="0">
+      <toggleGroup>
+         <ToggleGroup fx:id="inOrOut" />
+      </toggleGroup>
+    </RadioButton>
+    <RadioButton fx:id="outsourced" onAction="#handleRadios" text="Outsourced" toggleGroup="$inOrOut" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="0" />
+
+    <Label minWidth="-Infinity" text="ID" GridPane.columnIndex="0" GridPane.rowIndex="1">
+      <GridPane.margin>
+         <Insets left="10.0" />
+      </GridPane.margin>
+    </Label>
+    <TextField fx:id="textFieldPartId" disable="true" editable="false" promptText="Auto-Gen (Disabled)" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+    <Label minWidth="-Infinity" text="Name" GridPane.columnIndex="0" GridPane.rowIndex="2">
+      <GridPane.margin>
+         <Insets left="10.0" />
+      </GridPane.margin>
+    </Label>
+    <TextField fx:id="textFieldName" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+    <Label minWidth="-Infinity" text="Inventory" GridPane.columnIndex="0" GridPane.rowIndex="3">
+      <GridPane.margin>
+         <Insets left="10.0" />
+      </GridPane.margin>
+    </Label>
+    <TextField fx:id="textFieldInv" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+    <Label minWidth="-Infinity" text="Price/Cost" GridPane.columnIndex="0" GridPane.rowIndex="4">
+      <GridPane.margin>
+         <Insets left="10.0" />
+      </GridPane.margin>
+    </Label>
+    <TextField fx:id="textFieldPrice" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+    <Label minWidth="-Infinity" text="Max" GridPane.columnIndex="0" GridPane.rowIndex="5">
+      <GridPane.margin>
+         <Insets left="10.0" />
+      </GridPane.margin></Label>
+    <TextField fx:id="textFieldMax" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+    <Label text="Min" GridPane.columnIndex="2" GridPane.rowIndex="5">
+      <padding>
+         <Insets left="10.0" />
+      </padding>
+    </Label>
+    <TextField fx:id="textFieldMin" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+
+    <Label fx:id="macManId" minWidth="90.0" text="Machine ID" GridPane.columnIndex="0" GridPane.rowIndex="6">
+      <GridPane.margin>
+         <Insets left="10.0" />
+      </GridPane.margin>
+    </Label>
+    <TextField fx:id="textFieldMacManId" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+   <Button fx:id="saveButton" minWidth="-Infinity" onAction="#handleButtonClick" text="Save" GridPane.columnIndex="3" GridPane.rowIndex="7">
+      <GridPane.margin>
+         <Insets top="20.0" />
+      </GridPane.margin>
+   </Button>
+   <Button fx:id="cancelButton" onAction="#handleButtonClick" text="Cancel" GridPane.columnIndex="4" GridPane.rowIndex="7">
+      <GridPane.margin>
+         <Insets top="20.0" />
+      </GridPane.margin>
+   </Button>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+
+</GridPane>

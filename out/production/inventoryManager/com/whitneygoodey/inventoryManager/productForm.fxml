@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane alignment="center" hgap="20.0" prefHeight="400.0" prefWidth="550.0" vgap="10.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.whitneygoodey.inventoryManager.ProductFormController">
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+
+    <Label text="Product" GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <font>
+            <Font name="System Bold" size="14.0" />
+        </font>
+    </Label>
+      <TextField fx:id="partSearchBar" alignment="CENTER_RIGHT" maxWidth="100.0" minWidth="-Infinity" promptText="search by ID or name" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+
+    <VBox GridPane.rowIndex="1">
+        <GridPane hgap="10.0" vgap="10.0">
+            <Label minWidth="-Infinity" text="ID" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <GridPane.margin>
+                    <Insets left="10.0" />
+                </GridPane.margin>
+            </Label>
+            <TextField fx:id="textFieldPartId" disable="true" editable="false" promptText="Auto-Gen (Disabled)" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+            <Label minWidth="-Infinity" text="Name" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <GridPane.margin>
+                    <Insets left="10.0" />
+                </GridPane.margin>
+            </Label>
+            <TextField fx:id="textFieldName" maxWidth="75.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Label minWidth="-Infinity" text="Inventory" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                <GridPane.margin>
+                    <Insets left="10.0" />
+                </GridPane.margin>
+            </Label>
+            <TextField fx:id="textFieldInv" maxWidth="75.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+            <Label minWidth="-Infinity" text="Price" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                <GridPane.margin>
+                    <Insets left="10.0" />
+                </GridPane.margin>
+            </Label>
+            <TextField fx:id="textFieldPrice" maxWidth="75.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+            <Label minWidth="-Infinity" text="Max" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                <GridPane.margin>
+                    <Insets left="10.0" />
+                </GridPane.margin></Label>
+            <TextField fx:id="textFieldMax" maxWidth="75.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="Min" GridPane.columnIndex="0" GridPane.rowIndex="5">
+                <padding>
+                    <Insets left="10.0" />
+                </padding>
+            </Label>
+            <TextField fx:id="textFieldMin" maxWidth="75.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+
+
+    </VBox>
+
+    <VBox GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+        <VBox alignment="CENTER_RIGHT">
+            <TableView fx:id="allPartsTable" prefHeight="200.0" prefWidth="200.0">
+                <columns>
+                    <TableColumn fx:id="partIDCol" editable="false" maxWidth="75.0" prefWidth="45.0" text="Part ID" />
+                    <TableColumn fx:id="partNameCol" editable="false" minWidth="75.0" prefWidth="105.0" text="Part Name" />
+                    <TableColumn fx:id="partInventoryCol" editable="false" prefWidth="65.0" text="Inventory" />
+                    <TableColumn fx:id="partPriceCol" editable="false" prefWidth="75.0" text="Price/unit" />
+                </columns>
+            </TableView>
+         <Button fx:id="addButton" mnemonicParsing="false" onAction="#handleButtonClick" text="Add">
+            <VBox.margin>
+               <Insets bottom="10.0" right="20.0" top="10.0" />
+            </VBox.margin>
+         </Button>
+        </VBox>
+        <VBox alignment="CENTER_RIGHT">
+            <TableView fx:id="associatedPartsTable" prefHeight="200.0" prefWidth="200.0">
+                <placeholder>
+                    <Label text="No associated parts."/>
+                </placeholder>
+                <columns>
+                    <TableColumn fx:id="associatedPartIDCol" editable="false" maxWidth="75.0" prefWidth="45.0" text="Part ID" />
+                    <TableColumn fx:id="associatedPartNameCol" editable="false" minWidth="75.0" prefWidth="105.0" text="Part Name" />
+                    <TableColumn fx:id="associatedPartInventoryCol" editable="false" prefWidth="65.0" text="Inventory" />
+                    <TableColumn fx:id="associatedPartPriceCol" editable="false" prefWidth="75.0" text="Price/unit" />
+                </columns>
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
+            </TableView>
+         <Button fx:id="removeButton" mnemonicParsing="false" onAction="#handleButtonClick" text="Remove Associated Part">
+            <VBox.margin>
+               <Insets bottom="10.0" right="8.0" top="10.0" />
+            </VBox.margin></Button>
+         <ButtonBar prefHeight="40.0" prefWidth="200.0">
+           <buttons>
+             <Button fx:id="saveButton" mnemonicParsing="false" onAction="#handleButtonClick" text="Save" />
+               <Button fx:id="cancelButton" cancelButton="true" mnemonicParsing="false" onAction="#handleButtonClick" text="Cancel" />
+           </buttons>
+         </ButtonBar>
+        </VBox>
+
+
+    </VBox>
+    <columnConstraints>
+        <ColumnConstraints minWidth="-Infinity" />
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+    </rowConstraints>
+</GridPane>

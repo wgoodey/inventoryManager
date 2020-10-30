@@ -1,0 +1,10 @@
+.boxBorder {
+    -fx-border-color: black;
+    -fx-border-radius: 8px;
+}
+
+/*not working*/
+.vBoxTitle {
+    font-name: "System Bold";
+    font-size: 18.0;
+}
